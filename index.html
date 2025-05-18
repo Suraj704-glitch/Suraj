@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CodeCircuit Multi-App</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+   <div id="main" class="main">
+  <!-- Flashcard Viewer --> 
+  <div id="flashcard-viewer" class="app-section">
+    <h2>Flashcard Viewer</h2>
+    <div class="flashcard" id="flashcard">
+      <div class="card-inner" id="cardInner">
+        <div class="card-front" id="cardFront">Question</div>
+        <div class="card-back" id="cardBack">Answer</div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="know" onclick="markKnow()">I Know</button>
+      <button class="dontknow" onclick="markDontKnow()">Don't Know</button>
+    </div>
+    <div class="nav">
+      <button onclick="prevCard()">Prev</button>
+      <button onclick="nextCard()">Next</button>
+    </div>
+    <div class="stats" id="flashcardStats"></div>
+</div>
+
+  <!-- Quiz App -->
+  <div id="quiz-app" class="app-section">
+    <h2>Quiz App</h2>
+    <div id="quiz-container"></div>
+    <button id="next-btn" onclick="nextQuestion()">Next</button>
+    <div id="quiz-score"></div>
+  </div>
+
+  <!-- Habit Checklist -->
+  <div id="habit-checklist" class="app-section">
+    <h2>Habit Checklist</h2>
+    <ul id="habit-list" >
+        <li>Workout by 6Am </li>
+        <hr>
+        <li>Sleep by 10 PM</li>
+        </ul>
+    <div id="habit-progress"></div>
+  </div>
+
+  <!-- Reading Log -->
+  <div id="reading-log" class="app-section">
+    <h2>Reading Log</h2>
+    <table id="reading-table">
+      <thead>
+        <tr>
+          <th>Book</th>
+          <th>Author</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody id="reading-body"></tbody>
+    </table>
+  </div>
+
+  <!-- Course Catalog -->
+  <div id="course-catalog" class="app-section">
+    <h2>Course Catalog</h2>
+    <select id="filter-topic" onchange="filterCourses()">
+      <option value="all">All Topics</option>
+    </select>
+    <div id="course-list"></div>
+  </div>
+
+  <!-- Markdown Editor -->
+  <div id="markdown-editor" class="app-section">
+    <h2>Markdown Editor</h2>
+    <textarea id="markdown-input" placeholder="Write markdown here..."></textarea>
+    <div id="markdown-preview"></div>
+  </div>
+
+  <!-- Adaptive Quiz -->
+  <div id="adaptive-quiz" class="app-section">
+    <h2>Adaptive Quiz</h2>
+    <div id="adaptive-container"></div>
+    <button id="adaptive-next" onclick="nextAdaptive()">Next</button>
+  </div>
+
+  <!-- Spaced Repetition Flashcards -->
+  <div id="spaced-flashcards" class="app-section">
+    <h2>Spaced Repetition</h2>
+    <div id="spaced-card"></div>
+    <button onclick="markSpaced(true)">Know</button>
+    <button onclick="markSpaced(false)">Don't Know</button>
+    <div id="spaced-stats"></div>
+  </div>
+
+  <!-- Timeline Lesson Tracker -->
+  <div id="timeline-tracker" class="app-section">
+    <h2>Timeline Lesson Tracker</h2>
+    <ul id="timeline"></ul>
+  </div>
+
+  <!-- Video Player with Timestamp Comments -->
+  <div id="video-comments" class="app-section">
+    <h2>Video with Timestamp Comments</h2>
+    <video id="video-player" controls width="400">
+      <source src="sample.mp4" type="video/mp4" />
+    </video>
+    <input id="comment-text" placeholder="Comment at time..." />
+    <button onclick="addComment()">Add Comment</button>
+    <ul id="comment-list"></ul>
+  </div>
+ </div>
+  <script src="index.js"></script>
+</body>
+</html>
